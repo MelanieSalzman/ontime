@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.ort.ontime.fragments.ListFragment"
+        android:label="list_fragment"
+        tools:layout="@layout/list_fragment" >
+        <action
+            android:id="@+id/action_listFragment_to_storeDetailsFragment"
+            app:destination="@id/storeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeDetailsFragment"
+        android:name="com.ort.ontime.fragments.StoreDetailsFragment"
+        android:label="store_details_fragment"
+        tools:layout="@layout/store_details_fragment" >
+        <argument
+            android:name="store"
+            app:argType="com.ort.ontime.entities.Store" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ort.ontime.fragments.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginStoreFragment"
+            app:destination="@id/loginStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginUserFragment"
+        android:name="com.ort.ontime.fragments.loginUserFragment"
+        android:label="login_user_fragment"
+        tools:layout="@layout/login_user_fragment" >
+        <action
+            android:id="@+id/action_loginUserFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginStoreFragment"
+        android:name="com.ort.ontime.fragments.LoginStoreFragment"
+        android:label="login_store_fragment"
+        tools:layout="@layout/login_store_fragment" />
+</navigation>
